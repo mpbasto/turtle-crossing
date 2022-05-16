@@ -8,12 +8,6 @@ MOVE_INCREMENT = 10
 CHANCE = 7
 CARS_PROBABILITY_THRESHOLD = 2
 
-# TODO: Create cars (height=20px, width=40px)
-#   - randomly generated along the y-axis and move towards the left end of screen
-#   - no cars should be generated in the top and bottom 50px of the screen (a safe zone for turtle)
-#   - new cars are only generated every 6th time the game loop runs
-
-
 class CarManager:
     """
     Randomly generates small rectangular objects (cars) along the y-axis
