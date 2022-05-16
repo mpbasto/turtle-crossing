@@ -1,5 +1,5 @@
 from turtle import Turtle
-from tkinter import messagebox
+
 
 # Constants
 FONT = ("Courier", 22, "normal")
