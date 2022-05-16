@@ -10,11 +10,8 @@ CARS_PROBABILITY_THRESHOLD = 2
 
 class CarManager:
     """
-    Randomly generates small rectangular objects (cars) along the y-axis
-    and wil move them towards the left end of the screen. New cars are only generated every 6th time the game loop runs.
+    Randomly generates small rectangular objects (cars) along the y-axis of the screen. 
 
-    - create_car(): creates a random car along the y-axis with a given dimension
-    - move_cars():
     """
 
     def __init__(self):
@@ -39,18 +36,27 @@ class CarManager:
         self.all_cars.append(new_car)
 
     def generate_new_car(self):
+        """
+        Function that places created cars on generated x & y coordinates.
+        """
         random_chance = random.randint(1, CHANCE)
         if random_chance < self.probability_threshold:
             self.create_car()
             self.all_cars[-1].goto(300, random.randrange(-240, 240, 20))
 
     def generate_initial_cars(self):
+        """
+        Function that defines the number of starting cars.
+        """
         nr_cars = random.randint(15, 30)
         for _ in range(nr_cars):
             self.create_car()
         print(f"Generated {len(self.all_cars)} starting cars.")
 
     def starting_positions(self):
+        """
+        Function that arranges the cars' starting positions by generating a random x & y coordinates within a given range.
+        """
         for car in self.all_cars:
             car.goto(random.randint(-260, 260), random.randrange(-240, 240, 20))
 
